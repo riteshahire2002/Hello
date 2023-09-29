@@ -1,0 +1,87 @@
+var notify_visitors =notify_visitors?notify_visitors: {};
+    notify_visitors["Bot"]= {
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0,"Account":["Chatbot Account Expired. Upgrade now."],"tokens":"","gaEvents":{"trackingID":"","events":[]}}    };
+    notify_visitors["Banner"]= {
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0}    };
+    notify_visitors["Push"]={
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0,"Account":["Push inactive. Upgrade now.","PWA inactive. Upgrade now."],"tokens":"","gaEvents":{"trackingID":"","events":[]}}    };
+    notify_visitors["Events"]={
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0,"Account":["Events inactive. Upgrade now."]}    };
+    notify_visitors["Optimize"]={
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0,"domain":"https:\/\/www.1mg.com","Account":["ABtest Account Expired. Upgrade now."],"gaEvents":{"trackingID":"","events":[]},"tokens":""}    };
+    notify_visitors["Form"]={
+        "data":{"Authentication":"success","brandID":"2023","shopify_shop":"","referrer_source":"https:\/\/www.1mg.com\/otc\/zandu-balm-otc324474","cookieDomain":".1mg.com","isPwa":0}    };
+    
+    if(notify_visitors.data && !notify_visitors.data.spa){
+        notify_visitors.data.spa = {};
+    }else if(notify_visitors.data && notify_visitors.data.spa && Object.keys(notify_visitors.data.spa).length > 0){
+        if(typeof nvpack != 'undefined' && nvpack.config != 'undefined'){ 
+            nvpack.config = {}; 
+        }
+        if(typeof notify_visitors.data.spa == "string"){
+            notify_visitors.data.spa = JSON.parse(notify_visitors.data.spa);
+        }
+    }
+
+    notify_visitors.spa = 0;
+
+var nv_location = {"country":"India","city":"Vitner","region":"Maharashtra","code":"IN","dial_code":"+91","long":"75.551300","lat":"20.845800","continent_code":"AS","continent_name":"Asia"};
+
+ 
+
+    notify_visitors.CustomBrandScript = {"data":[{"script_pos":"3","script":"setTimeout(function () {\n    var nv_ProductPageFlag = dataLayer.filter((nv_item) => (nv_item.criteo && nv_item.criteo.eventData && nv_item.criteo.eventData.event && nv_item.criteo.eventData.event === \"viewItem\"));\n    if (nv_ProductPageFlag && nv_ProductPageFlag.length) {\n        var nv_ProducList = nv_ProductPageData();\n        if (nv_ProducList && Object.keys(nv_ProducList).length && nv_ProducList.product_name) {\n            nv('event', 'nv_product', nv_ProducList, 10, 1);\n        }\n    }\n}, 2000);\n\nfunction nv_ProductPageData() {\n    var nv_ProductObject = {};\n    var nv_ProductNameElem = document.querySelector(\"h1[class *= 'ProductTitle']\");\n    if (nv_ProductNameElem && nv_ProductNameElem.innerText && nv_ProductNameElem.innerText.length) {\n        var nv_productTitle = nv_ProductNameElem.innerText;\n        nv_ProductObject[\"product_name\"] = nv_productTitle;\n    }\n    var nv_ProductPriceElem = document.querySelector(\"span[class *= 'PriceBoxPlanOption__offer-price']\");\n    if (nv_ProductPriceElem && nv_ProductPriceElem.innerText && nv_ProductPriceElem.innerText.length) {\n        var nv_ProductPrice = nv_ProductPriceElem.innerText.includes(\"\u20b9\") ? parseFloat(nv_ProductPriceElem.innerText.replace(\"\u20b9\", \"\").trim()) : parseFloat(nv_ProductPriceElem.innerText.trim());\n        nv_ProductObject[\"product_price\"] = nv_ProductPrice;\n    }\n    var nv_ProductImageElem = document.querySelector(\"div[class *= 'ProductImage__preview'] img\");\n    if (nv_ProductImageElem && nv_ProductImageElem.src) {\n        var nv_ProductImage = nv_ProductImageElem.src;\n        nv_ProductObject[\"product_image\"] = nv_ProductImage;\n    }\n    if (window && window.location && window.location.href) {\n        var nv_PageLink = window.location.href;\n        nv_ProductObject[\"Page_URL\"] = nv_PageLink;\n    }\n    return nv_ProductObject;\n}","mode":"1"},{"script_pos":"1","script":"$('head').append(\"<style>#nv_js-box_10875{display:block !important}<\/style>\");","mode":0},{"script_pos":"3","script":"window.addEventListener('message',function(event) {\n    try { \n        var result = JSON.parse(event.data);\n        if(result && typeof result === \"object\" && result[0] != undefined) {\n            if(result[0] == 'NotifyVisitors_button_click'){ \n                ga('send', 'event', 'NotifyVisitors', '13239-Prod_Contains all City', 'Get App Click', 1, {\n                     nonInteraction: true\n                }); \n              window.location.href = result[4];\n            }  \n        }\n    }catch (e) {}\n},false);","mode":0},{"script_pos":"1","script":"if ('serviceWorker' in navigator){\nnavigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {\n    serviceWorkerRegistration.pushManager.getSubscription()\n      .then(function(subscription) {\n        if(subscription && subscription.endpoint.indexOf('googleapis.com\/gcm\/send') > 0){\n\t\t\tsubscription.unsubscribe().then(function(successful) {\n              console.log('unsubscibe gcm');\n            })\n\t\t}\n      })\n  });\n}","mode":0}]};
+
+    
+var nvEcheck=function(){if("undefined"!=typeof nvpack){clearInterval(checkNvpack);if("undefined"!=window.nv&&window.nv.q){var d=window.nv.q,e="user pushuser event pushevent pushsubscribe dimensions".split(" ");if(nvpack&&nvpack.anal&&nvpack.anal.nvHandler)for(var g=0;g<d.length;g++){var k=Array.prototype.slice.call(d[g]);notify_visitors.Events.data.status&&-1!==e.indexOf(k[0])&&nvpack.anal.nvHandler(k)}}window.nv=function(){var h="user pushuser event pushevent pushsubscribe dimensions".split(" "),
+b=["form_submit"],a=Array.prototype.slice.call(arguments);0<a.length&&notify_visitors.Events.data.status&&-1!==h.indexOf(a[0])&&nvpack&&nvpack.anal&&nvpack.anal.nvHandler&&nvpack.anal.nvHandler(a);notify_visitors.Optimize.data.form_data&&notify_visitors.Optimize.data.form_data.status&&-1!==b.indexOf(arguments[0])&&nvpack&&nvpack.heatmaps&&nvpack.heatmaps.nvHandler&&nvpack.heatmaps.nvHandler(arguments);if(Array.isArray(a)&&"get_NV_UID"==a[0])return window.notify_visitors.data.NV_UID?window.notify_visitors.data.NV_UID:
+"";if(Array.isArray(a)&&"get_web_app"==a[0])return["website","pwa","twa"][window.notify_visitors.data.isPwa];if(Array.isArray(a)&&"get_push_subscription"==a[0])return notify_visitors.data.getCookie("_nv_push_subscribe")?notify_visitors.data.getCookie("_nv_push_subscribe"):!1}}},checkNvpack=window.setInterval(nvEcheck,100);notify_visitors.prevLocation=[window.location].reduce(function(d,e){Object.keys(e).forEach(function(g){d[g]=e[g]});return d},{});
+(function(d){function e(b){this.callback=b;this.callback=this.callback.bind(this);this.watchPushState=this.watchPushState.bind(this);this.watchPopState=this.watchPopState.bind(this);this.watchReplaceState=this.watchReplaceState.bind(this);this.override(history,"pushState",this.watchPushState);this.override(history,"replaceState",this.watchReplaceState);d.addEventListener("popstate",this.watchPopState)}function g(){h&&clearInterval(h);h=setTimeout(function(){k()},500);notify_visitors.prevLocation=
+[d.location].reduce(function(b,a){Object.keys(a).forEach(function(c){b[c]=a[c]});return b},{})}function k(){h=null;if(notify_visitors.eventsRecord&&0<Object.keys(notify_visitors.eventsRecord).length){var b=notify_visitors.eventsRecord,a;for(a in b)b.hasOwnProperty(a)&&b[a].forEach(function(c){try{var f=c.e,l=c.n,m=c.c;f.removeEventListener?f.removeEventListener(l,m):f.detachEvent&&f.detachEvent("on"+l,m)}catch(n){}})}try{b=function(c){c&&c.remove()},document.querySelectorAll("div[id^=notify-visitors-]").forEach(b),
+document.querySelectorAll(".notify-visitors-element").forEach(b),document.getElementById("nv_bot_frame")&&document.getElementById("nv_bot_frame").remove()}catch(c){}notify_visitors.data.spa=notify_visitors.data.spa?JSON.stringify(notify_visitors.data.spa):"";notify_visitors.eventsRecord={};notify_visitors.preInit?notify_visitors.preInit():null;notify_visitors.initialize=!1;notify_visitors.init()}e.prototype.watchPushState=function(b){var a=this;return function(){b.apply(this,arguments);try{"function"==
+typeof a.callback&&a.callback(!0,"push_state")}catch(c){}}};e.prototype.watchReplaceState=function(b){var a=this;return function(){b.apply(this,arguments);try{"function"==typeof a.callback&&a.callback(!1,"replace_state")}catch(c){}}};e.prototype.watchPopState=function(b){try{"function"==typeof context.callback&&context.callback(!0,"pop_state")}catch(a){}};e.prototype.override=function(b,a,c){b[a]=c(b[a])};var h=null;notify_visitors.routingType&&"hash"==notify_visitors.routingType&&d.addEventListener("hashchange",
+function(b){b.newURL!=b.oldURL&&g()},!1);d.notify_visitors&&!d.notify_visitors.nv_history_watch&&(d.notify_visitors.nv_history_watch=new e(function(b,a){var c=new URL(notify_visitors.prevLocation.href),f=new URL(d.location.href);c.origin+c.pathname==f.origin+f.pathname&&c.origin+c.pathname+c.hash==f.origin+f.pathname+f.hash||g()}))})(window);
+
+
+(function(c){function l(){if("object"===typeof l.instance)return l.instance;this.get_deviceID=function(){return"103157188174wg4f9"};this.customPermissionBox=function(){return notify_visitors.po.customPermissionBox(1)};this.customPermissionBox=this.customPermissionBox.bind(this);this.get_deviceID=this.get_deviceID.bind(this);l.instance=this}function q(){c.notify_visitors=c.notify_visitors||{};c.notify_visitors.manual=c.notify_visitors.manual||{};c.notify_visitors.manual.onclick||(c.notify_visitors.manual.onclick=
+function(a){notify_visitors.Banner.data.auth=notify_visitors.auth;t("//cdn.notifyvisitors.com/ext/js/nv-banner.js",function(){try{notify_visitors.data.spa.banner=1}catch(d){}c.notify_visitors.manual.onclick(a)})});c.notify_visitors.manual.onclickForm||(c.notify_visitors.manual.onclickForm=function(a){notify_visitors.Form.data.auth=notify_visitors.auth;t("//cdn.notifyvisitors.com/ext/js/nv-leadform.js",function(){try{notify_visitors.data.spa.leadform=1}catch(d){}c.notify_visitors.manual.onclickForm(a)})})}
+function t(a,d){var b=document.createElement("script");b.type="text/javascript";b.readyState?b.onreadystatechange=function(){if("loaded"==b.readyState||"complete"==b.readyState)b.onreadystatechange=null,d()}:b.onload=function(){d()};b.src=a;document.getElementsByTagName("head")[0].appendChild(b)}c._nv_data=new l;"complete"==document.readyState?q():c.addEventListener?c.addEventListener("load",q,!1):c.attachEvent&&c.attachEvent("onload",q);c.sessionStorage.getItem("_nv_location")||""===nv_location||
+c.sessionStorage.setItem("_nv_location",JSON.stringify(nv_location));notify_visitors.data.session=function(a){if(a&&"object"===typeof a&&a.cookies&&"object"===typeof a.cookies&&0<Object.keys(a.cookies).length&&a.domain){var d=Array.isArray(a.cookies._nv_hit)&&a.cookies._nv_hit[2]&&1==a.cookies._nv_hit[2]?1:0;Array.isArray(a.cookies._nv_hit)&&a.cookies._nv_hit[0]&&1!=d&&(a.cookies._nv_hit[0]=notify_visitors.data.modifyHitCookie(a.cookies._nv_hit[0]));d="none"!==a.domain?"domain="+a.domain+";":"";for(var b in a.cookies){var f=
+new Date;if("_nv_sess"==a.cookies[b]){if(document.cookie="_nv_sess="+a.cookies[b][0]+";expires="+(new Date(f.getTime()+6E4*a.cookies[b][1])).toUTCString()+";"+d+"path=/; secure",a.newSess&&a.callback_data){var g=null;g=c.setInterval(function(){c&&c.nvpack&&c.nvpack.callbackNotifyEvent&&(c.clearInterval(g),c.nvpack.callbackNotifyEvent.send(a.callback_data,"userSession"))},100)}}else document.cookie=b+"="+a.cookies[b][0]+";"+(a.cookies[b][1]?"expires="+(new Date(f.getTime()+6E4*a.cookies[b][1])).toUTCString()+
+";":"")+d+" path=/; secure"}}};notify_visitors.data.modifyHitCookie=function(a){if(a){var d=a.split("."),b=notify_visitors.data.getCookie("_nv_hit");if(b&&a){b=c.atob(b.split(".")[2]);var f=c.atob(d[2]);if(b!==f){b=b.split("|");f=f.split("|");var g={},k={},r="",u=function(e){for(var m=0;m<e.length;++m)for(var n=m+1;n<e.length;++n)e[m]===e[n]&&e.splice(n--,1);return e};b.forEach(function(e){e=e.split("=");g[e[0]]=JSON.parse(e[1])});f.forEach(function(e){e=e.split("=");k[e[0]]=JSON.parse(e[1])});if(0<Object.keys(g).length&&
+0<Object.keys(k).length){for(var h in k)k.hasOwnProperty(h)&&g.hasOwnProperty(h)?JSON.stringify(k[h])!==JSON.stringify(g[h])&&(g[h]="pview"==h?k[h]:u(g[h].concat(k[h]))):g[h]=k[h];for(var p in g)r+=r?"|"+p+"="+JSON.stringify(g[p]):""+p+"="+JSON.stringify(g[p]);return d[0]+"."+d[1]+"."+c.btoa(r)}}}return a}};notify_visitors.data.getCookie=function(a){a+="=";for(var d=decodeURIComponent(document.cookie).split(";"),b=0;b<d.length;b++){for(var f=d[b];" "==f.charAt(0);)f=f.substring(1);if(0==f.indexOf(a))return f.substring(a.length,
+f.length)}return""};notify_visitors.data.set_NV_UID=function(a){notify_visitors.data.NV_UID=a}})(window);
+
+(function(){if(notify_visitors.CustomBrandScript&&notify_visitors.CustomBrandScript.data&&0<notify_visitors.CustomBrandScript.data.length){var a=notify_visitors.CustomBrandScript.data,b;for(b in a)if(a[b].script_pos&&a[b].script){var c=document.createElement("script");c.type="text/javascript";c.setAttribute("class","notify-visitors-element");c.text=1==a[b].mode?"(function (){"+a[b].script+"})()":a[b].script;1==a[b].script_pos&&document.head?document.head.appendChild(c):2==a[b].script_pos&&document.body?
+document.body.firstChild?document.body.insertBefore(c,document.body.firstChild):document.body.appendChild(c):3==a[b].script_pos&&document.body&&document.body.appendChild(c)}}})();
+
+notify_visitors.data.set_NV_UID('ba299882-263a-4048-a5d0-f16a7111d82f');
+notify_visitors.data.session({"cookies":{"_nv_sess":["173339004.1695407731.LBSTeTaGfHkONRBmCHyoZLzTvpcsLLUSshSeS2KsrZo1SoC1ui",30],"_nv_uid":["173339004.1695380262.ba299882-263a-4048-a5d0-f16a7111d82f.1695405588.1695407731.3.0",1051000],"_nv_utm":["173339004.1695380262.3.1.dXRtc3JjPWdvb2dsZXx1dG1jY249KG5vdCBzZXQpfHV0bWNtZD1vcmdhbmljfHV0bWN0cj0obm90IHByb3ZpZGVkKXx1dG1jY3Q9KG5vdCBzZXQpfGdjbGlkPShub3Qgc2V0KQ==",262800],"_nv_did":["173339004.1695380262.103157188174wg4f9",1051000],"_nv_hit":["173339004.1695407916.cHZpZXc9NQ==",262800,0]},"domain":".1mg.com","uuid":"ba299882-263a-4048-a5d0-f16a7111d82f"});
+
+
+    notify_visitors.load = function(link,eAtt) {
+        eAtt = eAtt || {};
+        var d = document;
+        var sTag = d.createElement("script");
+        sTag.type = "text/javascript";
+        sTag.async = nv.async;
+        Object.keys(eAtt).forEach(function (el){
+            sTag[el] = eAtt[el];
+        });
+        sTag.src = link;
+        if (d.body) {
+            d.body.appendChild(sTag);
+        } else {
+            d.head.appendChild(sTag);
+        }
+    };
+
+
+ 
+  
+
+ 
+        
+    
+    
+ 
+    

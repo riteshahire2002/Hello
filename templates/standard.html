@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% block title %}standard{% endblock title %}
+{% block body %}
+
+<style>
+   .col-md-3 {
+       display: inline-block;
+       margin-left: -4px;
+   }
+
+   .col-md-3 {
+       width: 100%;
+       height: auto;
+   }
+
+   body .carousel-control-indicator li {
+       background-color: blue;
+   }
+
+   body .carousel-control-prev-icon body .carousel-control-next-icon {
+       background-color: blue;
+   }
+
+   body .no-padding {
+       padding-left: 0;
+       padding-right: 0;
+   }
+
+   .carousel-control-prev-icon {
+       background: black no-repeat center center;
+       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+   }
+
+   .carousel-control-next-icon {
+       background: black no-repeat center center;
+       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+   }
+   body .carousel-indicators{
+   bottom:0;
+   }
+
+   .carousel-indicators .active{
+   background-color: blue;
+   }
+    img {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 7px;
+      width: 200px;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- carousel indicators starts from here-->
+
+<div class="container">
+   <div id="demo" class="carousel slide my-3" data-ride="carousel">
+<ul class="carousel-indicators">
+ <li data-target="#demo" data-slide-to="0" class="active"></li>
+ {% for i in range %}
+ <li data-target="#demo" data-slide-to="{{i}}" ></li>
+ {% endfor %}
+</ul>
+<!-- carousel indicators starts from here-->
+     <div class="carousel-inner">
+       <div class="carousel-item active">
+         <div class="row">
+           <div class="col-xs-6 col-sm-6 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/cefolac" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Cefolac 200</h5>
+                 <p class="card-text">MRP : 99Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/benadryl" class="card-img-top width="300" height="200"" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Benadryl Syp</h5>
+                 <p class="card-text">MRP : 120Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/levocetm syp" class="card-img-top width="300" height="200"" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Levocet M syp</h5>
+                 <p class="card-text">MRP : 89Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/zifi-o" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Zifi-O</h5>
+                 <p class="card-text">MRP : 220Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+<!-- carousel second-->
+
+       <div class="carousel-item">
+         <div class="row">
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/betnovate n" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Betnovate N</h5>
+                 <p class="card-text">MRP : 65Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/betnesol" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Betnesol</h5>
+                 <p class="card-text">MRP : 30Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/sinarest" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Sinarest</h5>
+                 <p class="card-text">MRP : 110Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+           <div class="col-xs-3 col-sm-3 col-md-3">
+             <div class="card" style="width: 18rem;">
+               <img src="/static/calpol 650" class="card-img-top width="300" height="200" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Calpol 650</h5>
+                 <p class="card-text">MRP : 31Rs</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+       <div class="carousel-item">
+
+         <div class="row">
+ <div class="col-xs-3 col-sm-3 col-md-3">
+   <div class="card" style="width: 18rem;">
+     <img src="/static/calpol 500" class="card-img-top width="300" height="200" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">Calpol 500</h5>
+       <p class="card-text">MRP : 15Rs</p>
+       <a href="#" class="btn btn-primary">Add to Cart</a>
+     </div>
+   </div>
+ </div>
+ <div class="col-xs-3 col-sm-3 col-md-3">
+   <div class="card" style="width: 18rem;">
+     <img src="/static/tusq syp" class="card-img-top width="300" height="200" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">Tusq X</h5>
+       <p class="card-text">MRP : 100Rs</p>
+       <a href="#" class="btn btn-primary">Add to Cart</a>
+     </div>
+   </div>
+ </div>
+ <div class="col-xs-3 col-sm-3 col-md-3">
+   <div class="card" style="width: 18rem;">
+     <img src="/static/acenacp" class="card-img-top width="300" height="200" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">Acenac P</h5>
+       <p class="card-text">MRP : 120Rs</p>
+       <a href="#" class="btn btn-primary">Add to Cart</a>
+     </div>
+   </div>
+ </div>
+ <div class="col-xs-3 col-sm-3 col-md-3">
+   <div class="card" style="width: 18rem;">
+     <img src="/static/sumo" class="card-img-topwidth="300" height="200" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">Sumo tab</h5>
+       <p class="card-text">MRP : 149Rs</p>
+       <a href="#" class="btn btn-primary">Add to cart</a>
+     </div>
+   </div>
+ </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+<a class="carousel-control-prev " href="#demo" role="button" data-slide="prev">
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="sr-only">Previous</span>
+ </a>
+ <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+ </a>
+ <br>
+<!-- end -->
+<h3 class="text-center">Shop by health concerns</h3>
+<div class="card-group">
+  <div class="card">
+    <img src="https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Diabetes</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Heart care</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Stomach care</h5>
+    </div>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card">
+    <img src="https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Liver care</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Bone, Joints & Muscle care</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Kidney care</h5>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-group">
+  <div class="card">
+    <img src="https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Derma care</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Respiratory care</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto" class="rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">Eye care</h5>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}

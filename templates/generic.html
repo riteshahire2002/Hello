@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% block title %}Generic{% endblock title %}
+{% block body %}
+
+<style>
+  .col-md-3 {
+      display: inline-block;
+      margin-left: -4px;
+  }
+
+  .col-md-3 {
+      width: 100%;
+      height: auto;
+  }
+
+  body .carousel-control-indicator li {
+      background-color: blue;
+  }
+
+  body .carousel-control-prev-icon body .carousel-control-next-icon {
+      background-color: blue;
+  }
+
+  body .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .carousel-control-prev-icon {
+      background: black no-repeat center center;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+  }
+
+  .carousel-control-next-icon {
+      background: black no-repeat center center;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+  }
+  body .carousel-indicators{
+  bottom:0;
+  }
+
+  .carousel-indicators .active{
+  background-color: blue;
+  }
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- carousel indicators starts from here-->
+
+<div class="container">
+  <div id="demo" class="carousel slide my-3" data-ride="carousel">
+<ul class="carousel-indicators">
+<li data-target="#demo" data-slide-to="0" class="active"></li>
+{% for i in range %}
+<li data-target="#demo" data-slide-to="{{i}}" ></li>
+{% endfor %}
+</ul>
+<!-- carousel indicators starts from here-->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/lactogen1" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Lactogen 1</h5>
+                <p class="card-text">MRP : 265Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+               </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/facewash" class="card-img-top width="300" height="200"" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Facewash</h5>
+                <p class="card-text">MRP : 125Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/mamypoko1" class="card-img-top width="300" height="200"" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Diapers</h5>
+                <p class="card-text">MRP : 99Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/him" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Himalaya Baby Products</h5>
+                <p class="card-text">MRP : 220Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- carousel second-->
+
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/iodex" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Iodex</h5>
+                <p class="card-text">MRP : 105Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/san" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sanitizers</h5>
+                <p class="card-text">MRP : 50Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/dettol" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Dettol Soap</h5>
+                <p class="card-text">MRP : 110Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="/static/bournvita" class="card-img-top width="300" height="200" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Bournvita</h5>
+                <p class="card-text">MRP : 210Rs</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+
+        <div class="row">
+<div class="col-xs-3 col-sm-3 col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="/static/vicks" class="card-img-top width="300" height="200" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Vicks Vaporub</h5>
+      <p class="card-text">MRP : 150Rs</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="/static/silk" class="card-img-top width="300" height="200" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">DairyMilk</h5>
+      <p class="card-text">MRP : 100Rs</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="/static/sensodyne" class="card-img-top width="300" height="200" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Sensodyne Paste</h5>
+      <p class="card-text">MRP : 220Rs</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="/static/mama" class="card-img-topwidth="300" height="200" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mamaearth Hair Oil</h5>
+      <p class="card-text">MRP : 259Rs</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a class="carousel-control-prev " href="#demo" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+<div class="banner-shadow-seperator mb-4 rounded-xl"><a role="link" class="mb-3 d-block" aria-label="HUGGIES" title="HUGGIES" target="_self" rel="" href="/brand/HUGGIES"><img class="img-fluid rounded-xl" itemprop="image" alt="HUGGIES" title="HUGGIES" src="https://static2.medplusmart.com/live/bannerImage/Mart/52252002a64e024257beda90e48c11da.jpg"></a></div>
+
+<div class="banner-shadow-seperator mb-4 rounded-xl"><a role="link" class="mb-3 d-block" aria-label="NIVEA" title="NIVEA" target="_self" rel="" href="/brand/NIVEA"><img class="img-fluid rounded-xl" itemprop="image" alt="NIVEA" title="NIVEA" src="https://static2.medplusmart.com/live/bannerImage/Mart/8d769274ee3942ba8d4e0c0826385edb.jpg"></a></div>
+
+<div class="banner-shadow-seperator mb-4 rounded-xl"><a role="link" class="mb-3 d-block" aria-label="SWIRLS ORAL CARE" title="SWIRLS ORAL CARE" target="_self" rel="" href="/promo/swirls-oral-care_10033"><img class="img-fluid rounded-xl" itemprop="image" alt="SWIRLS ORAL CARE" title="SWIRLS ORAL CARE" src="https://static2.medplusmart.com/live/bannerImage/Mart/cc2824593905aa4d845d9f10b7d4fefa.jpg"></a></div>
+
+<a role="link" class="mb-3 d-block" aria-label="MICROTEK BP MONITOR" title="MICROTEK BP MONITOR" target="_self" rel="" href="/product/microtek-automatic-upper-arm-blood-pressure-monitor-kf-65a-_MICR0197"><img class="img-fluid rounded-xl" itemprop="image" alt="MICROTEK BP MONITOR" title="MICROTEK BP MONITOR" src="https://static2.medplusmart.com/live/bannerImage/Mart/cbee29a8b2745cc1dc292e73280fdc42.jpg"></a>
+
+<div class="banner-shadow-seperator mb-4 rounded-xl"><a role="link" class="mb-3 d-block" aria-label="HORLICKS" title="HORLICKS" target="_self" rel="" href="/brand/HORLICKS"><img class="img-fluid rounded-xl" itemprop="image" alt="HORLICKS" title="HORLICKS" src="https://static2.medplusmart.com/live/bannerImage/Mart/9e8d370bc62a8ddcdc7cb23541d51c14.jpg"></a></div>
+
+<div class="banner-shadow-seperator mb-4 rounded-xl"><a role="link" class="mb-3 d-block" aria-label="EatriteDryFruitsAndNuts" title="EatriteDryFruitsAndNuts" target="_self" rel="" href="/promo/eatrite-dry-fruits-and-nuts_10028"><img class="img-fluid rounded-xl" itemprop="image" alt="EatriteDryFruitsAndNuts" title="EatriteDryFruitsAndNuts" src="https://static2.medplusmart.com/live/bannerImage/Mart/36ea48ee72e76ccbad721764025db77e.jpg"></a></div>
+
+
+
+<!-- end -->
+
+{% endblock body %}

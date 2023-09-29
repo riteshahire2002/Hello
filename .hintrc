@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "meta-viewport": "on",
+    "axe/structure": [
+      "default",
+      {
+        "list": "on",
+        "listitem": "on"
+      }
+    ],
+    "meta-charset-utf-8": "on"
+  }
+}
